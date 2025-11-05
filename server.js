@@ -16,10 +16,15 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
 app.use('/api/auth', authRoutes);
 
 // Error handling
 app.use(errorHandler);
 
 const PORT = 5000;
+
 app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
